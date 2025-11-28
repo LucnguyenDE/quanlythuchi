@@ -10,8 +10,7 @@ if (!isset($_SESSION['hocvien_data'])) {
                h.KetQua_Hinh, h.KetQua_Duong, h.NgayRaQDTN
         FROM NguoiLX n
         JOIN NguoiLX_HoSo h ON n.MaDK = h.MaDK
-        WHERE h.MaBC2 IN ('56/2025TT','57/2025TT','58/2025TT','59/2025TT',
-                          '67/2025TT','68/2025TT','69/2025TT','70/2025TT')
+        WHERE h.MaBC2 IN ('56/2025TT','57/2025TT','58/2025TT','59/2025TT')
         ORDER BY 
             LTRIM(RIGHT(n.HoVaTen, CHARINDEX(' ', REVERSE(n.HoVaTen) + ' ') - 1))
             COLLATE Vietnamese_CI_AS,
