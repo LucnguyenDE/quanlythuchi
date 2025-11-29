@@ -12,7 +12,6 @@ if ($SoCMT === '') {
 $sql = "SELECT * FROM LichSuDongTienSatHach WHERE SoCMT = ? ORDER BY NgayDongTien DESC";
 $params = [$SoCMT];
 $stmt = sqlsrv_query($conn, $sql, $params);
-
 if ($stmt === false) {
     die(print_r(sqlsrv_errors(), true));
 }
@@ -103,7 +102,10 @@ if ($stmt === false) {
         ?>
     </tbody>
 </table>
+<div style="display: flex; justify-content: space-between;">
 <a href="index.php" class="btn btn-secondary">Quay lại</a>
+<?php echo "<a href='dongtien.php?SoCMT=".$SoCMT."' class='btn btn-success'>Đóng tiền</a>";?>
+</div>
 </div>
 </body>
 </html>

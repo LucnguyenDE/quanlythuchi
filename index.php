@@ -62,7 +62,6 @@ include "search_process.php";
 
                     echo "<tr>";
                     echo "<td>".$stt."</td>"; $stt++;
-                    // echo "<td>".htmlspecialchars($row['HoVaTen'])."</td>";
                     echo "<td>
                     <a href='lichsudongtien.php?SoCMT=".urlencode($row['SoCMT'])."'>
                             ".htmlspecialchars($row['HoVaTen'])."
