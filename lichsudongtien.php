@@ -107,11 +107,10 @@ if ($stmt === false) {
                     data-ngnhan='".$row['NguoiNhanTien']."'
                     data-ghichu='".$row['Ghichu']."'
                 >Sửa</button>
-                
                 <a href='delete_dongtien_process.php?id=".$row['ID']."&SoCMT=".$row['SoCMT']."' 
                 class='btn btn-danger btn-sm'
                 onclick=\"return confirm('Bạn có chắc muốn xóa?');\">Xóa</a>
-                </td>";
+                    </td>";
                 echo "</tr>";
             }
         } else {
@@ -121,37 +120,29 @@ if ($stmt === false) {
         ?>
     </tbody>
 </table>
-<div style="display: flex; justify-content: space-between;">
-<a href="index.php" class="btn btn-secondary">Quay lại</a>
-<?php echo "<a href='dongtien.php?SoCMT=".$SoCMT."' class='btn btn-success'>Đóng tiền</a>";?>
-</div>
+    <div style="display: flex; justify-content: space-between;">
+    <a href="index.php" class="btn btn-secondary">Quay lại</a>
+    <?php echo "<a href='dongtien.php?SoCMT=".$SoCMT."' class='btn btn-success'>Đóng tiền</a>";?>
+    </div>
 </div>
 <!-- Modal sửa -->
  <!-- Modal sửa -->
 <div class="modal fade" id="editModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <form id="editForm" method="POST" action="update_dongtien_process.php">
         <input type="hidden" name="SoCMT" value="<?php echo $_GET['SoCMT']; ?>">
         <div class="modal-header">
           <h5 class="modal-title">Sửa thông tin đóng tiền</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-
         <div class="modal-body">
-
             <input type="hidden" name="ID" id="editID">
-
-            <!-- <div class="mb-2">
-                <label>Môn đóng tiền</label>
-                <input type="text" class="form-control" name="MonDongTien" id="editMonDongTien">
-            </div> -->
             <div class="mb-2">
     <label>Môn đóng tiền</label>
-    <div id="editMonDongTien">
+    <div id="editMonDongTien"> 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="MonDongTien[]" id="mon1" value="Lý thuyết">
+            <input class="form-check-input" type="checkbox" name="MonDongTien[]" id="mon1" value="Lý thuyết" >
             <label class="form-check-label" for="mon1">Lý thuyết</label>
         </div>
         <div class="form-check">
@@ -171,35 +162,27 @@ if ($stmt === false) {
             <label class="form-check-label" for="mon5">Lệ phí thi</label>
         </div>
     </div>
-</div>
-
             <div class="mb-2">
                 <label>Số tiền</label>
                 <input type="text" class="form-control" name="SoTienDong" id="editSoTienDong">
             </div>
-
             <div class="mb-2">
                 <label>Người đóng tiền</label>
                 <input type="text" class="form-control" name="NguoiDongTien" id="editNguoiDongTien">
             </div>
-
             <div class="mb-2">
                 <label>Người nhận tiền</label>
                 <input type="text" class="form-control" name="NguoiNhanTien" id="editNguoiNhanTien">
             </div>
-
             <div class="mb-2">
                 <label>Ghi chú</label>
                 <textarea class="form-control" name="Ghichu" id="editGhichu"></textarea>
             </div>
-
         </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
           <button type="submit" class="btn btn-primary">Lưu</button>
         </div>
-
       </form>
 
     </div>

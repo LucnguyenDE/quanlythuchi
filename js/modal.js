@@ -8,11 +8,11 @@ document.querySelectorAll('.editBtn').forEach(btn => {
         // Lấy dữ liệu từ data-*
         document.getElementById('editID').value = this.dataset.id;
         
-        const monValues = this.dataset.mon.split(','); // lấy từ data-mon của nút sửa
+        const monValues = this.dataset.mon.split('+ '); // lấy từ data-mon của nút sửa
         const checkboxes = document.querySelectorAll('#editMonDongTien input[type="checkbox"]');
         checkboxes.forEach(cb => {
-            cb.checked = monValues.includes(cb.value);
-        });
+        cb.checked = monValues.map(m => m.toLowerCase()).includes(cb.value.toLowerCase());
+        })
         // Format số tiền 000.000
         let tien = this.dataset.tien;
         tien = parseInt(tien).toLocaleString("vi-VN");
