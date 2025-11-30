@@ -8,13 +8,14 @@ $SoCMT         = $_POST['SoCMT'] ?? '';
 $MonDongTienArray = $_POST['MonDongTien'] ?? [];
 if (!empty($MonDongTienArray)) {
     // Chuyển thành chuỗi phân tách bằng dấu phẩy
-    $MonDongTien = implode(', ', $MonDongTienArray);
+    $MonDongTien = implode('+ ', $MonDongTienArray);
 } else {
     $MonDongTien = '';
 }
 $NguoiDongTien = $_POST['NguoiDongTien'] ?? '';
 $NguoiNhanTien = $_POST['NguoiNhanTien'] ?? '';
-$SoTienDong    = $_POST['SoTienDong'] ?? 0;
+// $SoTienDong    = $_POST['SoTienDong'] ?? 0;
+$SoTienDong = str_replace('.', '', $_POST['SoTienDong']);
 $Ghichu        = $_POST['Ghichu'] ?? '';
 $NgaySinh_sql = '';
 if (!empty($NgaySinh)) {

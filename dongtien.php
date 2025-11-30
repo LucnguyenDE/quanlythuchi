@@ -155,7 +155,7 @@ button.btn-secondary:hover {
 
         <div class="mb-3">
             <label>Số tiền đóng</label>
-            <input type="number" step="100000" class="form-control" name="SoTienDong" required>
+            <input type="text" class="form-control" id="SoTienDong" name="SoTienDong" required>
         </div>
 
         <div class="mb-3">
@@ -167,5 +167,6 @@ button.btn-secondary:hover {
         <a href="index.php" class="btn btn-secondary">Quay lại</a>
     </form>
 </div>
+<script src="js/format_sotien.js"></script>
 </body>
 </html>
