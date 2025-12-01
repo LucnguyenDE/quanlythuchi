@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include "../db/db_connect.php";
 
 // Nhận SoCMT từ URL
 $SoCMT = isset($_GET['SoCMT']) ? $_GET['SoCMT'] : '';
@@ -103,7 +103,7 @@ button.btn-secondary:hover {
 <div class="container mt-4">
     <h2>Đóng tiền sát hạch</h2>
     
-    <form method="POST" action="dongtien_process.php">
+    <form method="POST" action="../process/dongtien_process.php">
         <!-- Trường khóa: SoCMT -->
         <input type="hidden" name="SoCMT" value="<?php echo htmlspecialchars($hocvien['SoCMT']); ?>">
 
@@ -164,9 +164,9 @@ button.btn-secondary:hover {
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu</button>
-        <a href="index.php" class="btn btn-secondary">Quay lại</a>
+        <?php echo '<a href="../pages/lichsudongtien.php?SoCMT='.$SoCMT .'" class="btn btn-secondary">Quay lại</a>'; ?>
     </form>
 </div>
-<script src="js/format_sotien.js"></script>
+<script src="../js/format_sotien.js"></script>
 </body>
 </html>

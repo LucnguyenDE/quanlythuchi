@@ -1,6 +1,6 @@
 <?php
-include "db_connect.php";
-include "search_process.php";
+include "db/db_connect.php";
+include "process/search_process.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ include "search_process.php";
 <div class="container mt-4">
     <!-- <div class="d-flex justify-content-end mb-3">
         <span class="me-2">Xin chào, <?php echo htmlspecialchars($username); ?></span>
-        <a href="logout.php" class="btn btn-sm btn-outline-secondary">Đăng xuất</a>
+        <a href="pages/login.php" class="btn btn-sm btn-outline-secondary">Đăng xuất</a>
     </div> -->
     <h2>Danh sách học viên</h2>
 
@@ -63,7 +63,7 @@ include "search_process.php";
                     echo "<tr>";
                     echo "<td>".$stt."</td>"; $stt++;
                     echo "<td>
-                    <a href='lichsudongtien.php?SoCMT=".urlencode($row['SoCMT'])."'>
+                    <a href='pages/lichsudongtien.php?SoCMT=".urlencode($row['SoCMT'])."'>
                             ".htmlspecialchars($row['HoVaTen'])."
                     </a>
                     </td>";
@@ -75,7 +75,7 @@ include "search_process.php";
                     echo "<td>".htmlspecialchars($row['KetQua_Hinh'])."</td>";
                     echo "<td>".htmlspecialchars($row['KetQua_Duong'])."</td>";
                     echo "<td>".($row['NgayRaQDTN'] ? $row['NgayRaQDTN']->format('d-m-Y') : '')."</td>";
-                    echo "<td><a href='dongtien.php?SoCMT=".urlencode($row['SoCMT'])."' class='btn btn-success btn-sm mb-1'>Đóng tiền</a></td>";
+                    echo "<td><a href='pages/dongtien.php?SoCMT=".urlencode($row['SoCMT'])."' class='btn btn-success btn-sm mb-1'>Đóng tiền</a></td>";
                     echo "</tr>";
                 }
             } else {

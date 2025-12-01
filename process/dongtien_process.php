@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include "../db/db_connect.php";
 
 // Nhận dữ liệu từ form
 $HoVaTen       = $_POST['HoVaTen'] ?? '';
@@ -38,6 +38,6 @@ if ($stmt === false) {
     die(print_r(sqlsrv_errors(), true));
 } else {
     // refresh session nếu muốn
-    header("Location: index.php");
+    header("Location: ../pages/lichsudongtien.php?SoCMT=".$SoCMT);
     exit;
 }

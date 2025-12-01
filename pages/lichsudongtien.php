@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include "../db/db_connect.php";
 
 // Nhận SoCMT từ URL
 $SoCMT = $_GET['SoCMT'] ?? '';
@@ -107,7 +107,7 @@ if ($stmt === false) {
                     data-ngnhan='".$row['NguoiNhanTien']."'
                     data-ghichu='".$row['Ghichu']."'
                 >Sửa</button>
-                <a href='delete_dongtien_process.php?id=".$row['ID']."&SoCMT=".$row['SoCMT']."' 
+                <a href='../process/delete_dongtien_process.php?id=".$row['ID']."&SoCMT=".$row['SoCMT']."' 
                 class='btn btn-danger btn-sm'
                 onclick=\"return confirm('Bạn có chắc muốn xóa?');\">Xóa</a>
                     </td>";
@@ -121,7 +121,7 @@ if ($stmt === false) {
     </tbody>
 </table>
     <div style="display: flex; justify-content: space-between;">
-    <a href="index.php" class="btn btn-secondary">Quay lại</a>
+    <a href="../index.php" class="btn btn-secondary">Quay lại</a>
     <?php echo "<a href='dongtien.php?SoCMT=".$SoCMT."' class='btn btn-success'>Đóng tiền</a>";?>
     </div>
 </div>
@@ -130,7 +130,7 @@ if ($stmt === false) {
 <div class="modal fade" id="editModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form id="editForm" method="POST" action="update_dongtien_process.php">
+      <form id="editForm" method="POST" action="../process/update_dongtien_process.php">
         <input type="hidden" name="SoCMT" value="<?php echo $_GET['SoCMT']; ?>">
         <div class="modal-header">
           <h5 class="modal-title">Sửa thông tin đóng tiền</h5>
@@ -189,7 +189,8 @@ if ($stmt === false) {
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/modal.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/format_sotien.js"></script>
 </body>
 </html>
 
