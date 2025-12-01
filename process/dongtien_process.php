@@ -10,7 +10,8 @@ if (!empty($MonDongTienArray)) {
     // Chuyển thành chuỗi phân tách bằng dấu phẩy
     $MonDongTien = implode('+ ', $MonDongTienArray);
 } else {
-    $MonDongTien = '';
+    echo "<script>alert('Chọn ít nhất 1 môn');</script>";
+    return;
 }
 $NguoiDongTien = $_POST['NguoiDongTien'] ?? '';
 $NguoiNhanTien = $_POST['NguoiNhanTien'] ?? '';

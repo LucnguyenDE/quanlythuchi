@@ -1,6 +1,5 @@
+<!-- CHƯA SÀI TỚI -->
 <?php
-
-
 // --- Kết nối SQL Server ---
 $serverName = "localhost"; 
 $connectionOptions = [

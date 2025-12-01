@@ -1,4 +1,6 @@
-<?php $_SESSION['error']=''?>
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -14,10 +16,12 @@ h2{text-align:center; margin-bottom:25px;}
 <body>
 <div class="login-container">
     <h2>Đăng nhập</h2>
-    <?php if($_SESSION['error']): ?>
-        <div class="alert alert-danger"><?php echo htmlspecialchars($error); ?></div>
+   <?php if (!empty($_SESSION['error'])): ?>
+    <div class="alert alert-danger">
+        <?php echo htmlspecialchars($_SESSION['error']); ?>
+    </div>
     <?php endif; ?>
-    <form action="login_process.php"  method="POST">
+    <form action="../process/login_process.php"  method="POST">
         <div class="mb-3">
             <label for="username" class="form-label">Tên đăng nhập</label>
             <input type="text" class="form-control" id="username" name="username" required>

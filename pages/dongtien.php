@@ -127,7 +127,7 @@ button.btn-secondary:hover {
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" name="MonDongTien[]" id="mon_mohinh" value="Mô phỏng">
-        <label class="form-check-label" for="mon_mohinh">Mô phỏng</label>
+        <label class="form-check-label" for="mon_mophong">Mô phỏng</label>
     </div>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" name="MonDongTien[]" id="mon_sahinh" value="Sa hình">
@@ -164,9 +164,10 @@ button.btn-secondary:hover {
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu</button>
-        <?php echo '<a href="../pages/lichsudongtien.php?SoCMT='.$SoCMT .'" class="btn btn-secondary">Quay lại</a>'; ?>
+        <?php echo '<a href="../index.php" class="btn btn-secondary">Quay lại</a>'; ?>
     </form>
 </div>
 <script src="../js/format_sotien.js"></script>
+<script src="../js/format_monhoc.js"></script>
 </body>
 </html>
