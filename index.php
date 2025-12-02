@@ -30,11 +30,21 @@ include "process/search_process.php";
         ?> trên tổng số <?php echo $total_records; ?> học viên
     </p>
 
-    <form method="GET" style="margin-bottom: 15px;">
+    <!-- <form method="GET" style="margin-bottom: 15px;">
         <input type="text" name="keyword" placeholder="Nhập tên hoặc CCCD..." style="padding: 6px; width: 250px;" value="<?php echo htmlspecialchars($keyword); ?>">
         <button type="submit" style="padding: 6px 12px;">Tìm học viên</button>
-    </form>
+    </form> -->
+    <form method="GET" style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;">
+    <input type="text" name="keyword" placeholder="Nhập tên hoặc CCCD..." 
+           style="padding: 6px; width: 250px;" 
+           value="<?php echo htmlspecialchars($keyword); ?>">
 
+    <button type="submit" class="btn btn-primary">Tìm học viên</button>
+
+    <a href="pages/danhsachdadongtien.php" class="btn btn-success">
+        Danh sách học viên đã đóng tiền
+    </a>
+    </form> 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
