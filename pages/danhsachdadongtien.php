@@ -25,7 +25,9 @@ $total = sqlsrv_num_rows($stmt);
 
 <div class="container mt-4">
     <h2>Danh sách học viên đã đóng tiền</h2>
-
+    <a href="../process/xuat_excel_process.php" class="btn btn-success">
+        Xuất Excel
+    </a>
     <p class="text-center">
         Tổng số: <strong><?php echo $total; ?></strong> lượt đóng tiền
     </p>
@@ -38,7 +40,6 @@ $total = sqlsrv_num_rows($stmt);
                 <th>CCCD</th>
                 <th>Ngày đóng tiền</th>
                 <th>Môn đóng tiền</th>
-                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -58,14 +59,6 @@ $total = sqlsrv_num_rows($stmt);
             echo "<td>".htmlspecialchars($row['SoCMT'])."</td>";
             echo "<td>".$ngay."</td>";
             echo "<td>".htmlspecialchars($row['MonDongTien'])."</td>";
-
-            echo "<td>
-                    <a href='them_vao_danh_sach_cho.php?SoCMT=".urlencode($row['SoCMT'])."' 
-                       class='btn btn-primary btn-sm'>
-                          Thêm vào danh sách đợi thi
-                    </a>
-                 </td>";
-
             echo "</tr>";
         }
         ?>
