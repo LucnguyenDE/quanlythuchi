@@ -1,7 +1,7 @@
 <?php
 include "../db/db_connect.php";
 
-$sql = "SELECT HoVaTen, SoCMT, NgayDongTien, MonDongTien 
+$sql = "SELECT HoVaTen, SoCMT, NgayDongTien, MonDongTien, SoTienDong
         FROM LichSuDongTienSatHach
         ORDER BY NgayDongTien";
 
@@ -25,8 +25,8 @@ $total = sqlsrv_num_rows($stmt);
 
 <div class="container mt-4">
     <h2>Danh sách học viên đã đóng tiền</h2>
-    <a href="../process/xuat_excel_process.php" class="btn btn-success">
-        Xuất Excel
+    <a href="../index.php" class="btn btn-secondary">
+        Quay lại
     </a>
     <p class="text-center">
         Tổng số: <strong><?php echo $total; ?></strong> lượt đóng tiền
@@ -40,6 +40,7 @@ $total = sqlsrv_num_rows($stmt);
                 <th>CCCD</th>
                 <th>Ngày đóng tiền</th>
                 <th>Môn đóng tiền</th>
+                <th>Số tiền</th>
             </tr>
         </thead>
         <tbody>
@@ -59,13 +60,16 @@ $total = sqlsrv_num_rows($stmt);
             echo "<td>".htmlspecialchars($row['SoCMT'])."</td>";
             echo "<td>".$ngay."</td>";
             echo "<td>".htmlspecialchars($row['MonDongTien'])."</td>";
+            echo "<td>" . number_format($row['SoTienDong'], 0, ',', '.') . " VNĐ</td>";
             echo "</tr>";
         }
         ?>
 
         </tbody>
     </table>
-
+    <a href="../process/xuat_excel_process.php" class="btn btn-success">
+        Xuất Excel
+    </a>
 </div>
 
 </body>

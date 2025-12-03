@@ -68,7 +68,7 @@ if ($stmt === false) {
 </head>
 <body>
 <div class="container mt-4">
-<h2>Lịch sử đóng tiền</h2>
+<h2 class="text-center">Lịch sử đóng tiền của học viên</h2>
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
         <tr>
